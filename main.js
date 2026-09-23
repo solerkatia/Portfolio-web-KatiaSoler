@@ -1,37 +1,31 @@
-    document.addEventListener('DOMContentLoaded', () => {
-    // 1. Toggle Mobile Menu (Menú Hamburguesa Mejorado)
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
+    // 1. Toggle Mobile Menu (Menú Hamburguesa)
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileLinks = document.querySelectorAll('.mobile-link');
 
-    if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            // Alternamos la clase hidden y además forzamos display por si acaso
-            mobileMenu.classList.toggle('hidden');
+if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Ocultar el menú automáticamente al hacer clic en cualquier enlace
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
         });
+    });
 
-        // Ocultar el menú automáticamente al hacer clic en cualquier enlace
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Ocultar si se hace clic fuera del menú
-        document.addEventListener('click', (e) => {
-            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-                mobileMenu.classList.add('hidden');
-            }
-        });
-    }
-    
-    // ... tu código del formulario de contacto sigue abajo igual ...
+    // Ocultar si se hace clic fuera del menú
+    document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+            mobileMenu.classList.add('hidden');
+        }
+    });
+}
 
 
 
-
-    
     // Contact Form Submission Handler (Conectado a Formspree)
     const contactForm = document.getElementById('contact-form');
     const formSuccess = document.getElementById('form-success');
