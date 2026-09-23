@@ -1,11 +1,13 @@
     document.addEventListener('DOMContentLoaded', () => {
-    // 1. Toggle Mobile Menu (Menú Hamburguesa)
+    // 1. Toggle Mobile Menu (Menú Hamburguesa Mejorado)
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileLinks = document.querySelectorAll('.mobile-link');
 
     if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', () => {
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Alternamos la clase hidden y además forzamos display por si acaso
             mobileMenu.classList.toggle('hidden');
         });
 
@@ -15,7 +17,17 @@
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // Ocultar si se hace clic fuera del menú
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
     }
+    
+    // ... tu código del formulario de contacto sigue abajo igual ...
+
 
 
 
