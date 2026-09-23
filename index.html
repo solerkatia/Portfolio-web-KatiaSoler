@@ -275,27 +275,28 @@
 
             <form action="https://formspree.io/f/xeaokvnb" method="POST" id="contact-form" class="space-y-6">
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div class="space-y-2">
-                        <label class="text-sm font-medium text-slate-300">Tu Nombre</label>
-                        <input type="text" required placeholder="Ej. Juan Pérez" class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-400 transition-colors">
-                    </div>
-                    <div class="space-y-2">
-                        <label class="text-sm font-medium text-slate-300">Tu Correo Electrónico</label>
-                        <input type="email" required placeholder="tu@correo.com" class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-400 transition-colors">
-                    </div>
-                </div>
-                <div class="space-y-2">
-                    <label class="text-sm font-medium text-slate-300">Mensaje o Consulta</label>
-                    <textarea rows="5" required placeholder="Cuéntame sobre tu proyecto o idea de negocio..." class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-400 transition-colors"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold py-4 rounded-xl glow-effect glow-hover transition-all text-base cursor-pointer">
-                    Enviar Mensaje
-                </button>
-                <div id="form-success" class="hidden text-center text-cyan-400 font-medium text-sm pt-2">
-                    ¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.
-                </div>
-            </form>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="space-y-2">
+            <label class="text-sm font-medium text-slate-300">Tu Nombre</label>
+            <input type="text" name="nombre" required placeholder="Ej. Juan Pérez" class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-400 transition-colors">
+        </div>
+        <div class="space-y-2">
+            <label class="text-sm font-medium text-slate-300">Tu Correo Electrónico</label>
+            <input type="email" name="email" required placeholder="tu@correo.com" class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-400 transition-colors">
+        </div>
+    </div>
+    <div class="space-y-2">
+        <label class="text-sm font-medium text-slate-300">Mensaje o Consulta</label>
+        <textarea rows="5" name="mensaje" required placeholder="Cuéntame sobre tu proyecto o idea de negocio..." class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-400 transition-colors"></textarea>
+    </div>
+    <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold py-4 rounded-xl glow-effect glow-hover transition-all text-base cursor-pointer">
+        Enviar Mensaje
+    </button>
+    <div id="form-success" class="hidden text-center text-cyan-400 font-medium text-sm pt-2">
+        ¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.
+    </div>
+</form>
+
         </div>
     </section>
 
